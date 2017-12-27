@@ -10,9 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let headerLabel = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        headerLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(headerLabel)
+        view.safeAreaLayoutGuide.leftAnchor.constraint(equalTo: headerLabel.safeAreaLayoutGuide.leftAnchor).isActive = true
+        view.safeAreaLayoutGuide.topAnchor.constraint(equalTo: headerLabel.safeAreaLayoutGuide.topAnchor).isActive = true
+        
+        headerLabel.text = "HELLO"
+        headerLabel.font = UIFont(descriptor: .preferredFontDescriptor(withTextStyle: .headline), size: 48)
     }
 
     override func didReceiveMemoryWarning() {
